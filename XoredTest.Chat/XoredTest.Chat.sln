@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XoredTest.Chat.WebSite", "XoredTest.Chat.WebSite\XoredTest.Chat.WebSite.csproj", "{FBA6AEB5-5BF6-4929-B91C-18D9DA34C874}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XoredTest.Chat.Domain", "XoredTest.Chat.Domain\XoredTest.Chat.Domain.csproj", "{B514A79F-42F6-41BB-A818-78A03F8D4483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FBA6AEB5-5BF6-4929-B91C-18D9DA34C874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBA6AEB5-5BF6-4929-B91C-18D9DA34C874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBA6AEB5-5BF6-4929-B91C-18D9DA34C874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B514A79F-42F6-41BB-A818-78A03F8D4483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B514A79F-42F6-41BB-A818-78A03F8D4483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B514A79F-42F6-41BB-A818-78A03F8D4483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B514A79F-42F6-41BB-A818-78A03F8D4483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
