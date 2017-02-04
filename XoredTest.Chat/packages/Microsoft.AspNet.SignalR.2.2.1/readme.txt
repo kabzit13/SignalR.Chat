@@ -1,4 +1,4 @@
-Please see http://go.microsoft.com/fwlink/?LinkId=272764 for more information on using SignalR.
+Install-Package Microsoft.AspNet.SignalRPlease see http://go.microsoft.com/fwlink/?LinkId=272764 for more information on using SignalR.
 
 Upgrading from 1.x to 2.0
 -------------------------
