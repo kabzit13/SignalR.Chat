@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Xored Chat</title>
-    <link rel="stylesheet" href="../Css/main.css" />
+    <link rel="stylesheet" href="../Content/main.css" />
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
     <!--Script references. -->
     <!--Reference the jQuery library. -->
     <script src="../Scripts/jquery-1.10.2.min.js"></script>
@@ -13,18 +14,21 @@
     <!--Add script to update the page and send messages.-->
     <script src="../Resurces/lang.js"></script>
     <script src="../Scripts/main.js"></script>
-    
+
 </head>
 <body>
 
-    <div class="title">
-        
+    <div class="popover-title">
+        <h2>Simple chat</h2>
     </div>
-    <div class="container">
-        <textarea cols="40" rows="5" id="message" ></textarea>
-        <input type="button" id="sendmessage" value="Send"/>
-        <input type="hidden" id="displayname" />
+<div class="center-block">
+    
+    <div class=" container center-block">
+        <textarea class="left" cols="40" rows="5" id="message"></textarea>
+        <input class="btn-info " type="button" id="sendmessage" value="Send"/>
         <ul id="discussion"></ul>
     </div>
+    <input type="hidden" id="displayname"/>
+</div>
 </body>
 </html>

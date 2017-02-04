@@ -5,7 +5,6 @@ function broadcastMsg(name, message) {
     // Html encode display name and message.
     var encodedName = $('<div />').text(name).html();
     var encodedMsg = $('<div />').text(message).html();
-    // Add the message to the page.
     $('#discussion').append('<li><strong>' + encodedName
         + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
 };
@@ -16,9 +15,8 @@ function setNewName(name) {
 
 function sendMsgToAll() {
     $('#sendmessage').click(function() {
-        // Call the Send method on the hub.
+        // Call the SentToAll method on the hub.
         chat.server.sendToAll($('#displayname').val(), $('#message').val());
-        // Clear text box and reset focus for next comment.
         $('#message').val('').focus();
     });
 };
@@ -28,16 +26,20 @@ function ConnectUser(userName) {
 };
 
 function notifyAboutNewUser(name) {
-    var encodedMsg = $('<div />').text(name).html();
-    // Add the message to the page.
-    $('#discussion').append('<li>New user in chat with name:&nbsp;&nbsp;' + encodedMsg + '</li>');
+    var encodedName = $('<div />').text(name).html();
+    $('#discussion').append('<li>'+ general.newUsr + encodedName + '</li>');
 };
 
+function userLeft(name) {
+    var encodedName = $('<div />').text(name).html();
+    $('#discussion').append('<li>' +  encodedName + general.usrLeft + '</li>');
+}
+
 $(function init() {
-    // Create a function that the hub can call to broadcast messages.
     chat.client.broadcastMessage = broadcastMsg;
     chat.client.notifyAboutNewUser = notifyAboutNewUser;
     chat.client.setNewName = setNewName;
+    chat.client.notifyAboutLeftUser = userLeft;
     // Get the user name and store it to prepend to messages.
     $('#displayname').val(prompt(general.entrName, ''));
     // Set initial focus to message input box.

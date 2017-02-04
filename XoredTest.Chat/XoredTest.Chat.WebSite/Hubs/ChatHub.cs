@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 using XoredTest.Chat.Domain;
 
@@ -52,7 +53,7 @@ namespace XoredTest.Chat.WebSite.Hubs
         {
             var anonCount = connectedUsers.Count(t => t.UserType == UserType.Anonymous);
 
-            var userName = $"Anonimus{anonCount}";
+            var userName = $"Anonimus";
             connectedUsers.Add(new User(this.Context.ConnectionId, userName, UserType.Anonymous ));
             return userName;
         }
@@ -67,5 +68,23 @@ namespace XoredTest.Chat.WebSite.Hubs
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// On user disconnect
+        /// </summary>
+        /// <param name="stopCalled"></param>
+        /// <returns></returns>
+        public override Task OnDisconnected(bool stopCalled)
+        {
+            var user = connectedUsers.FirstOrDefault(t => t.Id == this.Context.ConnectionId);
+
+            if (user != null)
+            {
+                connectedUsers.Remove(user);
+
+                this.Clients.All.notifyAboutLeftUser(user.Name);
+            }
+
+            return base.OnDisconnected(stopCalled);
+        }
     }
 }
