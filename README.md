@@ -1,13 +1,13 @@
-# Xored.Chat
-Test task for Xored
+# SignalR.Chat
+Test task for one of companies
 
 ## Synopsis
 
-This is my small interview task for Xored. Contains application with basic chat functionality. 
+This is my small interview task for one of russian companies. Contains application with basic chat functionality. 
 
 ## Motivation
 
-Would like to work in xored, that is why I am doing this project. Also triend to learn new technology in .Net.
+Would like to work in one nice companies, that is why I am doing this project. Also triend to learn new technology in .Net.
 
 ## Installation
 
